@@ -9,7 +9,7 @@ export default class AdminDashboardLayout extends Component {
 		return (
 			<div className="admin-container">
 				<div className="admin-header">
-					Header Admin
+					Header Admin Support
 				</div>
 				<div className="admin-sidebar">
 					Sidebar admin
