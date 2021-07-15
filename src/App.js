@@ -1,64 +1,85 @@
 import React, { Component, StrictMode } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect, useParams } from 'react-router-dom';
+import ClientDashboardLayout from './layouts/ClientDashboardLayout';
+import AdminDashboardLayout from './layouts/AdminDashboardLayout';
+
+import Landing from './pages/Landing';
+import UsersProfile from './pages/Profile';
+import UsersPosts from './pages/Posts';
+import AdminDashboard from './pages/Dashboard';
+import AdminSettings from './pages/Settings';
+import ErrorPage from './pages/ErrorPage';
 
 export default class App extends Component {
+
   render() {
     return (
       <StrictMode>
           <BrowserRouter>
             <Switch>
               <Route exact path={"/"} component={()=>(
-                  <><h2>Ini Landing Page</h2></>
+                  <><Landing/></>
                 )}/>
 
               <Switch>
-                  {/*NESTING ROUTER CLIENT START*/}
-                  <Route path={"/client"} component={()=>(
-                    
-                      <Switch>
-                          <Route exact path={"/client/posts"} render={()=>(
-                                <><h2>Client Posts</h2></>
-                            )}/>
-                          <Route exact path={"/client/profile"} render={()=>(
-                                <><h2>Client Profile</h2></>
-                            )}/>
-                          <Route render={()=>(
-                              <>Not Found 404</>
-                            )}/>
-                      </Switch>
 
-                    )}/>
-                  {/*NESTING ROUTER CLIENT END*/}
+                
+                    {/*NESTING ROUTER CLIENT START*/}
+                      <Route path={"/client"} render={()=>(
+                          <ClientDashboardLayout>
+                            <Switch>
+                                  <Route exact path={"/client/posts"} render={()=>(
+                                        <><UsersPosts>Client Posts</UsersPosts></>
+                                    )}/>
+                                  <Route exact path={"/client/profile"} render={()=>(
+                                        <><UsersProfile>Client Profile</UsersProfile></>
+                                    )}/>
+                                  <Route render={()=>(
+                                      <><ErrorPage/></>
+                                    )}/>
+                            </Switch>
+                            <Redirect from={"/client"} to="/client/posts"/>
+                          </ClientDashboardLayout>
+                        )}/>
+                      
+                    {/*NESTING ROUTER CLIENT END*/}
+                  
 
+                  
                   {/*NESTING ROUTER ADMIN START*/}
-                  <Route path={"/admin"} component={()=>(
-
+                  <Route path={"/admin"} render={()=>(
+                      <AdminDashboardLayout>
                       <Switch>
                           <Route exact path={"/admin/dashboard"} render={()=>(
-                                <><h2>Admin Dashboard</h2></>
+                                <><AdminDashboard>Admin Dashboard Config</AdminDashboard></>
                             )}/>
                           <Route exact path={"/admin/settings"} render={()=>(
-                                <><h2>Admin Settings</h2></>
+                                <><AdminSettings>Admin Setting Config</AdminSettings></>
                             )}/>
                           <Route render={()=>(
-                              <>Not Found 404</>
+                              <><ErrorPage/></>
                             )}/>
                       </Switch>
-
+                      <Redirect from={"/admin"} to="/admin/dashboard"/>
+                      </AdminDashboardLayout>
                     )}/>
+                    
                   {/*NESTING ROUTER ADMIN END*/}
                   
+
                   <Route render={()=>(
-                      <>Not Found 404</>
+                      <><ErrorPage/></>
                     )}/>
+
               </Switch>
              
 
               <Route path={"/*"} render={()=>(
 
-                  <>Not Found 404</>
+                  <><ErrorPage/></>
 
                 )}/>
+
             </Switch>
           </BrowserRouter>
       </StrictMode>
