@@ -14,19 +14,29 @@ export default class App extends Component {
           <BrowserRouter>
             <Switch>
               <Route exact path={"/"} component={()=>(
-                  <><Landing/></>
+                  <>
+                    <h1>Ini Merupakan Halaman Landingpage</h1>
+                    <Landing/>
+
+                  </>
                 )}/>
 
               <Switch>
               
                     {/*NESTING ROUTER CLIENT START*/}
                       <Route path={"/client"} render={()=>(
+                          <>
+                            <h1>Ini Adalah Halaman Client</h1>
                             <ClientRouter/>
+                          </>
                         )}/>
                   
                     {/*NESTING ROUTER ADMIN START*/}
                     <Route path={"/admin"} render={()=>(
+                          <>
+                            <h1>Ini adalah halaman admin</h1>
                             <AdminRouter/>
+                          </>
                       )}/>
                 
                     <Route render={()=>(
