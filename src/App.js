@@ -1,5 +1,6 @@
 import React, { Component, StrictMode } from 'react';
 import { BrowserRouter, Switch, Route, Redirect, useParams } from 'react-router-dom';
+import './assets/css/index.css';
 import AdminRouter from './routes/AdminRouter';
 import ClientRouter from './routes/ClientRouter';
 
@@ -34,7 +35,6 @@ export default class App extends Component {
                     {/*NESTING ROUTER ADMIN START*/}
                     <Route path={"/admin"} render={()=>(
                           <>
-                            <h1>Ini adalah halaman admin</h1>
                             <AdminRouter/>
                           </>
                       )}/>
