@@ -1,5 +1,6 @@
 import React, { Component, StrictMode } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import './assets/css/index.css';
 
 export default class App extends Component {
 
@@ -10,7 +11,7 @@ export default class App extends Component {
             <Switch>
               <Route exact path={"/"} component={()=>(
                   <>
-                    <h1>Ini Merupakan Halaman Landingpage</h1>
+                    <h1>Shopping Page</h1>
                   
                   </>
                 )}/>
@@ -20,29 +21,52 @@ export default class App extends Component {
                     {/*NESTING ROUTER CLIENT START*/}
                       <Route path={"/client"} render={()=>(
                           <>
-                            <h1>Ini Adalah Halaman Client</h1>
-                            
+                          <Switch>
+                            <Route exact path={"/client/dashboard"} render={()=>(
+                                <>
+                                  <>Client Dashboard</>
+                                </>
+                              )}/>
+                            <Route render={()=>(
+                                  <>
+                                    <>Not Found client Page</>
+                                  </>
+                              )}/>
+                          </Switch>
+                          <Redirect from="/client" to={"/client/dashboard"}/>
                           </>
                         )}/>
                   
                     {/*NESTING ROUTER ADMIN START*/}
                     <Route path={"/admin"} render={()=>(
                           <>
-                           
+                          <Switch>
+                             <Route exact path={"/admin/dashboard"} render={()=>(
+                                 <>
+                                   <>Admin Dashboard</>
+                                 </>
+                               )}/>
+                             <Route render={()=>(
+                                   <>
+                                     <>Not Found admin Page</>
+                                   </>
+                               )}/>
+                          </Switch>
+                          <Redirect from="/admin" to={"/admin/dashboard"}/>
                           </>
                       )}/>
                 
                     <Route render={()=>(
                           <>
-                            
+                            NOT FOUND 404
                           </>
                       )}/>
 
               </Switch>
 
               <Route path={"/*"} render={()=>(<></>)}/>
-
             </Switch>
+
           </BrowserRouter>
       </StrictMode>
     );
