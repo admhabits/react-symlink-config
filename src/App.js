@@ -1,11 +1,5 @@
 import React, { Component, StrictMode } from 'react';
-import { BrowserRouter, Switch, Route, Redirect, useParams } from 'react-router-dom';
-import './assets/css/index.css';
-import AdminRouter from './routes/AdminRouter';
-import ClientRouter from './routes/ClientRouter';
-
-import Landing from './pages/Landing';
-import ErrorPage from './pages/ErrorPage';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 export default class App extends Component {
 
@@ -17,8 +11,7 @@ export default class App extends Component {
               <Route exact path={"/"} component={()=>(
                   <>
                     <h1>Ini Merupakan Halaman Landingpage</h1>
-                    <Landing/>
-
+                  
                   </>
                 )}/>
 
@@ -28,24 +21,26 @@ export default class App extends Component {
                       <Route path={"/client"} render={()=>(
                           <>
                             <h1>Ini Adalah Halaman Client</h1>
-                            <ClientRouter/>
+                            
                           </>
                         )}/>
                   
                     {/*NESTING ROUTER ADMIN START*/}
                     <Route path={"/admin"} render={()=>(
                           <>
-                            <AdminRouter/>
+                           
                           </>
                       )}/>
                 
                     <Route render={()=>(
-                        <><ErrorPage/></>
+                          <>
+                            
+                          </>
                       )}/>
 
               </Switch>
 
-              <Route path={"/*"} render={()=>(<><ErrorPage/></>)}/>
+              <Route path={"/*"} render={()=>(<></>)}/>
 
             </Switch>
           </BrowserRouter>
