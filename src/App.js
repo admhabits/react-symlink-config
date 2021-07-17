@@ -1,5 +1,6 @@
 import React, { Component, StrictMode } from 'react';
 import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import './assets/css/icons.css';
 import './assets/css/index.css';
 import Shop from './pages/Shop';
 

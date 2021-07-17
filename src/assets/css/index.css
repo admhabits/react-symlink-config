@@ -5,7 +5,7 @@
 }
 
 body {
-	background: white;
+	background: #FFF;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -17,18 +17,28 @@ body {
 	top: 0;
 	z-index: 1;
 	display: flex;
+	position: -webkit-sticky;
 	position: sticky;
 	justify-content: space-between;
 	align-items: center;
-	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 5px 200px rgba(0, 0, 0, 0.4);
 }
 
-.brand {
+span.material-icons {
+	margin-right: 0.2em;
+	font-size: 34px;
+}
+
+.brand > a{
 	color: floralwhite;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	font-weight: auto;
 	margin: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
 }
 
 .navbar {
@@ -59,12 +69,18 @@ body {
 	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
-.brand {
+.brand > a {
 	color: whitesmoke;
 	text-overflow: ellipsis;
 	font-weight: bolder;
 	font-size: 1em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	text-decoration: none;
 }
+
+
 
 .navbar {
 	display: flex;
@@ -117,7 +133,7 @@ body {
 .gigs-cards{
 	
 	padding: 0.8em;
-	/*background: #3771;*/
+	background: White;
 	display: grid;
 	grid-template-columns: 300px 300px 300px;
 	grid-template-rows: auto;
@@ -132,7 +148,7 @@ body {
 	background: white;
 	height: 100%;
 	max-width: 100%;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	box-shadow: 3px 3px 3px rgb(0 0 0 / 15%);
 	display: grid;
 	grid-template-columns: auto auto;
 	grid-template-rows: auto auto auto;
@@ -286,7 +302,7 @@ span.product-price {
 	}
 
 	.product-price {
-		font-size: 0.9em;
+		font-size: 1.2em;
 		grid-column: 1/3;
 	}
 }
@@ -324,7 +340,7 @@ span.product-price {
 	span.text {
 		text-align: left;
 		text-shadow: blanchedalmond;
-		font-size: 0.7em;
+		font-size: 0.9em;
 	}
 
 	.navbar {

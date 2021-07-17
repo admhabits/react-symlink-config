@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, useLocation, useRouteMatch } from 'react-router-dom'
+import { useParams, useLocation, useRouteMatch, Link } from 'react-router-dom'
 
 import CardShop from '../components/client/CardShop';
 import CategoryShop from '../components/client/CategoryShop';
@@ -16,7 +16,9 @@ export default function Shop() {
 		<React.StrictMode>
 			<div className="header-container">
 				<div className="brand">
-					Warung Kilat
+					<Link href="/">
+						<span className="material-icons md-light">store</span>
+					Warung Kilat</Link>
 				</div>
 				<div className="navbar">
 					<a href="/" className="navbar-item">Home</a>
@@ -32,15 +34,44 @@ export default function Shop() {
 					<CategoryShop/>
 				</div>*/}
 				<div className="gigs-cards">
-					<CardShop name={"Mendoan"} sales={24} img={mendoan}/>
-					<CardShop name={"Bakwan"} sales={13} img={bakwan}/>
-					<CardShop name={"Kopi Hitam"} sales={22} img={kopi}/>
-					<CardShop name={"Roti Bakar"} sales={22} img={roti}/>
+					<CardShop
+						stock={123}
+						price={3000} 
+						name={"kopi"} 
+						sales={294} 
+						img={kopi} 
+						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
+						/>
+					<CardShop
+						stock={123}
+						price={1500} 
+						name={"Bakwan"} 
+						sales={274} 
+						img={bakwan} 
+						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
+						/>
+					<CardShop
+						stock={123}
+						price={3500} 
+						name={"Mendoan"} 
+						sales={214} 
+						img={mendoan} 
+						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
+						/>
+
+					<CardShop
+						stock={123}
+						price={5000} 
+						name={"Roti"} 
+						sales={154} 
+						img={roti} 
+						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
+						/>
 					
 				</div>
 			</div>
 			<div className="footer-container">
-				<div className="copyright">&copy; PT Arkana Putra Indonesa</div>
+				<div className="copyright">&copy; Warung Kilat Karangpucung</div>
 			</div>
 		</React.StrictMode>
 	)
