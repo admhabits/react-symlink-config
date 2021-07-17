@@ -3,6 +3,12 @@ import { useParams, useLocation, useRouteMatch } from 'react-router-dom'
 
 import CardShop from '../components/client/CardShop';
 import CategoryShop from '../components/client/CategoryShop';
+
+import kopi from '../assets/images/kopi.jpeg';
+import bakwan from '../assets/images/bakwan.jpeg';
+import mendoan from '../assets/images/mendoan.jpeg';
+import roti from '../assets/images/roti.jpeg';
+
 export default function Shop() {
 	const { search } = useLocation();
 	const query = new URLSearchParams(search).get('query');
@@ -22,18 +28,15 @@ export default function Shop() {
 				<div className="banner-sliders">
 					
 				</div>
-				<div className="gigs-category">
+				{/*<div className="gigs-category">
 					<CategoryShop/>
-				</div>
+				</div>*/}
 				<div className="gigs-cards">
-					<CardShop/>
-					<CardShop/>
-					<CardShop/>
-					<CardShop/>
-					<CardShop/>
-					<CardShop/>
-					<CardShop/>
-					<CardShop/>
+					<CardShop name={"Mendoan"} sales={24} img={mendoan}/>
+					<CardShop name={"Bakwan"} sales={13} img={bakwan}/>
+					<CardShop name={"Kopi Hitam"} sales={22} img={kopi}/>
+					<CardShop name={"Roti Bakar"} sales={22} img={roti}/>
+					
 				</div>
 			</div>
 			<div className="footer-container">

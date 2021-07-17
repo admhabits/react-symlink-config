@@ -12,8 +12,10 @@ body {
 
 .header-container {
 	background: mediumseagreen;
+	text-transform: uppercase;
 	height: 50px;
 	top: 0;
+	z-index: 1;
 	display: flex;
 	position: sticky;
 	justify-content: space-between;
@@ -23,6 +25,7 @@ body {
 
 .brand {
 	color: floralwhite;
+	white-space: nowrap;
 	text-overflow: ellipsis;
 	font-weight: auto;
 	margin: 10px;
@@ -52,6 +55,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px;
+	z-index: 1;
 	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -115,10 +119,11 @@ body {
 	padding: 0.5em;
 	/*background: #3771;*/
 	display: grid;
-	grid-template-columns: auto auto;
-	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 300px 300px 300px;
+	grid-template-rows: auto;
 	justify-content: center;
 	align-content: center;
+	font-size: 0.8em;
 	column-gap: 0.5em;
 	row-gap: 0.5em;
 }
@@ -126,6 +131,7 @@ body {
 .gigs-cards-items {
 	background: white;
 	height: 100%;
+	max-width: 100%;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	display: grid;
 	grid-template-columns: auto auto;
@@ -133,65 +139,63 @@ body {
 
 }
 
-.product-img {
-	height: 200px;
-	width: 200px;
-	background: white;
+.product-img-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	grid-column: 1/3;
 	grid-row: 1/2;
-	grid-column: 1/2;
+}
+
+img.product-image {
+	max-width: 100%;
+	height: 150px;
+	text-align: center;
+}
+
+
+
+
+span.product-price {
+	font-size: auto;
+	padding: 0.8em;
+	width: 100%;
+
+	grid-row: 1/3;
+	grid-column: 1/3;
+	color: white;
+	font-weight: 600;
+	background: green;
+
+	opacity: 0.9;
+/*	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;*/
+	
 }
 
 .product-desc {
+	text-align: left;
 	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+
 	background: #fff;
 	color: #455;
-	padding: 0.6em;
-	font-size: 1em;
+
+	font-size: 1.1em;
 	font-weight: 400;
-	grid-row: 1/2;
-	grid-column: 2/3;
+	grid-row: 2/3;
+	grid-column: 1/3;
 	box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
 
 }
 
-@media only screen and (max-width: 768px){
 
-	.content-page {
-		padding: 0;
-	}
-	.gigs-cards {
-		grid-template-columns: auto auto;
-		grid-template-rows: 1fr 1fr;
-	}
-	.gigs-cards-items{
-		font-size: 12px;
-		font-family: monospace;
-		font-weight: 150;
-
-	}
-
-	.product-desc {
-		grid-row: 2/3;
-		grid-column: 1/3;
-	}
-
-	.product-img {
-		height: 200px;
-		width: 100%;
-		background: white;
-		grid-row: 1/2;
-		grid-column: 1/2;
-	}
-
-	.product-title {
-		grid-row: 3/4;
-		grid-column: 1/3;
-		padding: 0.4em;
-	}
-}
 
 .product-title {
-	padding: 0.6em;
+	padding: 0.8em;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -200,6 +204,7 @@ body {
 	font-weight: 450;
 	grid-row: 3/4;
 	grid-column: 1/3;
+	text-transform: capitalize;
 }
 
 .product-title-disable {
@@ -230,4 +235,103 @@ body {
 	background: white;
 	padding: 10px;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/*Break Point*/
+
+@media only screen and (max-width: 768px){
+
+	.content-page {
+		padding: 0;
+	}
+	.gigs-cards {
+		grid-template-columns: auto auto;
+		grid-template-rows: 1fr 1fr;
+	}
+	.gigs-cards-items{
+		grid-template-columns: 1fr;
+		font-size: 12px;
+		width: 100%;
+		font-family: monospace;
+		font-weight: 150;
+
+	}
+
+	.product-image {
+		max-width: 100%;
+	}
+
+
+	.product-desc {
+		grid-row: 2/3;
+		grid-column: 1/3;
+	}
+
+	span.text {
+		text-align: left;
+		text-shadow: blanchedalmond;
+	}
+
+	span.stock {
+		font-size: 1em;
+	}
+
+	.product-title {
+		padding: 0.8em;
+		grid-row: 3/4;
+		grid-column: 1/3;
+		
+	}
+
+	.product-price {
+		font-size: 0.9em;
+		grid-column: 1/3;
+	}
+}
+
+
+ span.stock {
+ 	color: white;
+ 	text-transform: capitalize;
+ 	display: flex;
+ 	justify-content: space-between;
+ 	font-size: 1em;
+ 	font-weight: 250!important;
+ }
+
+.items-stats {
+ 	background: darkgreen;
+ 	padding: 0.7em;
+ 	flex: 5;
+ }
+
+.items-count {
+ 	background: darkgoldenrod;
+ 	padding: 0.7em;
+ 	flex: 1;
+ 	text-align: center;
+ }
+
+ span.text {
+ 	padding: 0.6em;
+ }
+
+
+@media only screen and (max-width: 450px){
+
+	span.text {
+		text-align: left;
+		text-shadow: blanchedalmond;
+		font-size: 0.7em;
+	}
+
+	.navbar {
+		display: none;
+	}
+
+	span.items.stats {
+		padding: 0.5em;
+	}
 }
