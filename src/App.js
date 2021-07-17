@@ -1,11 +1,22 @@
 import React, { Component, StrictMode } from 'react';
 import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import $ from 'jquery';
+
 import './assets/css/icons.css';
 import './assets/css/index.css';
 import Shop from './pages/Shop';
 
 export default class App extends Component {
 
+  componentDidMount() {
+    $('.atc').on('click', function(){
+      alert("Add To Cart");
+    })
+
+    $('#cart-shop').on('click', function(){
+      alert("Keranjang Belanja");
+    })
+  }
   render() {
     return (
       <StrictMode>
