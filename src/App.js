@@ -1,6 +1,7 @@
 import React, { Component, StrictMode } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import './assets/css/index.css';
+import Shop from './pages/Shop';
 
 export default class App extends Component {
 
@@ -11,8 +12,7 @@ export default class App extends Component {
             <Switch>
               <Route exact path={"/"} component={()=>(
                   <>
-                    <h1>Shopping Page</h1>
-                  
+                    <Shop/>
                   </>
                 )}/>
 
@@ -46,25 +46,31 @@ export default class App extends Component {
                                    <>Admin Dashboard</>
                                  </>
                                )}/>
+                             <Route  path={"/admin/profile"} render={()=>(
+                                 <>
+                                   <>Hi</>
+                                 </>
+                               )}/>
                              <Route render={()=>(
                                    <>
                                      <>Not Found admin Page</>
+
                                    </>
                                )}/>
                           </Switch>
-                          <Redirect from="/admin" to={"/admin/dashboard"}/>
+                          {<Redirect from="/admin" to={"/admin/dashboard"}/>}
                           </>
                       )}/>
                 
-                    <Route render={()=>(
+                   {/* <Route render={()=>(
                           <>
                             NOT FOUND 404
                           </>
-                      )}/>
+                      )}/>*/}
 
               </Switch>
 
-              <Route path={"/*"} render={()=>(<></>)}/>
+              <Route path={"/*"} render={()=>(<>Not Found</>)}/>
             </Switch>
 
           </BrowserRouter>
