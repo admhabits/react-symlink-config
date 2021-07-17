@@ -25,8 +25,12 @@ body {
 }
 
 span.material-icons {
-	margin-right: 0.2em;
-	font-size: 34px;
+	margin-right: 0.1em;
+}
+
+.navbar {
+	padding-right: 14px;
+	padding-left: 14px;
 }
 
 .brand > a{
@@ -41,18 +45,14 @@ span.material-icons {
 	text-decoration: none;
 }
 
-.navbar {
+.navbar > div.navbar-item {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-}
-
-.navbar-item {
 	text-decoration: none;
 	color: white;
 	font-weight: 350;
-	margin: 10px;
+	cursor: pointer;
 }
 
 
@@ -82,20 +82,14 @@ span.material-icons {
 
 
 
-.navbar {
+.navbar > div.navbar-item {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+	text-decoration: none;
+	color: white;
 }
 
-.navbar-item {
-	text-decoration: none;
-	color: whitesmoke;
-	font-weight: bolder;
-	margin: 10px;
-	font-size: 1em;
-}
 
 }
 
@@ -343,9 +337,6 @@ span.product-price {
 		font-size: 0.9em;
 	}
 
-	.navbar {
-		display: none;
-	}
 
 	span.items.stats {
 		padding: 0.5em;

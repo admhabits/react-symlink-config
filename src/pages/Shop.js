@@ -17,13 +17,14 @@ export default function Shop() {
 			<div className="header-container">
 				<div className="brand">
 					<Link href="/">
-						<span className="material-icons md-light">store</span>
+						<span className="material-icons md-light md-28">store</span>
 					Warung Kilat</Link>
 				</div>
 				<div className="navbar">
-					<a href="/" className="navbar-item">Home</a>
-					<a href="/" className="navbar-item">Mitra</a>
-					<a href="/" className="navbar-item">Masuk</a>
+					<div className="navbar-item">
+						<span className="material-icons md-light md-26">shopping_cart</span>
+						Cart
+					</div>
 				</div>
 			</div>
 			<div className="content-page">
