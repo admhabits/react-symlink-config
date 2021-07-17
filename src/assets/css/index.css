@@ -116,7 +116,7 @@ body {
 
 .gigs-cards{
 	
-	padding: 0.5em;
+	padding: 0.8em;
 	/*background: #3771;*/
 	display: grid;
 	grid-template-columns: 300px 300px 300px;
@@ -124,8 +124,8 @@ body {
 	justify-content: center;
 	align-content: center;
 	font-size: 0.8em;
-	column-gap: 0.5em;
-	row-gap: 0.5em;
+	column-gap: 0.8em;
+	row-gap: 0.8em;
 }
 
 .gigs-cards-items {
