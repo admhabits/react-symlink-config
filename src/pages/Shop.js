@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, useLocation, useRouteMatch } from 'react-router-dom'
 
+import CardShop from '../components/client/CardShop';
+import CategoryShop from '../components/client/CategoryShop';
 export default function Shop() {
 	const { search } = useLocation();
 	const query = new URLSearchParams(search).get('query');
-
 	return (
 		<React.StrictMode>
 			<div className="header-container">
@@ -21,66 +22,18 @@ export default function Shop() {
 				<div className="banner-sliders">
 					
 				</div>
-				<div className="category">
-					
+				<div className="gigs-category">
+					<CategoryShop/>
 				</div>
 				<div className="gigs-cards">
-					<div className="gigs-cards-items">
-						<div className="product-img"></div>
-						<div className="product-desc">
-							<span className="text">
-								Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. 
-								Pemesanan hari ini sampai pukul 16.00 WIB
-							</span>
-						</div>
-						<div className="product-title">
-							<span className="name">Gado-Gado</span>
-							<span className="stats">1 Terjual</span>
-						</div>
-					</div>
-
-					<div className="gigs-cards-items">
-						<div className="product-img"></div>
-						<div className="product-desc">
-							<span className="text">
-								Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. 
-								Pemesanan hari ini sampai pukul 16.00 WIB
-							</span>
-						</div>
-						<div className="product-title">
-							<span className="name">Gado-Gado</span>
-							<span className="stats">1 Terjual</span>
-						</div>
-					</div>
-
-					<div className="gigs-cards-items">
-						<div className="product-img"></div>
-						<div className="product-desc">
-							<span className="text">
-								Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. 
-								Pemesanan hari ini sampai pukul 16.00 WIB
-							</span>
-						</div>
-						<div className="product-title">
-							<span className="name">Gado-Gado</span>
-							<span className="stats">1 Terjual</span>
-						</div>
-					</div>
-
-					<div className="gigs-cards-items">
-						<div className="product-img"></div>
-						<div className="product-desc">
-							<span className="text">
-								Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. 
-								Pemesanan hari ini sampai pukul 16.00 WIB
-							</span>
-						</div>
-						<div className="product-title">
-							<span className="name">Gado-Gado</span>
-							<span className="stats">1 Terjual</span>
-						</div>
-					</div>
-					
+					<CardShop/>
+					<CardShop/>
+					<CardShop/>
+					<CardShop/>
+					<CardShop/>
+					<CardShop/>
+					<CardShop/>
+					<CardShop/>
 				</div>
 			</div>
 			<div className="footer-container">
