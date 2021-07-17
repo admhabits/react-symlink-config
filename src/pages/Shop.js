@@ -4,6 +4,7 @@ import { useParams, useLocation, useRouteMatch } from 'react-router-dom'
 export default function Shop() {
 	const { search } = useLocation();
 	const query = new URLSearchParams(search).get('query');
+
 	return (
 		<React.StrictMode>
 			<div className="header-container">
@@ -24,6 +25,33 @@ export default function Shop() {
 					
 				</div>
 				<div className="gigs-cards">
+					<div className="gigs-cards-items">
+						<div className="product-img"></div>
+						<div className="product-desc">
+							<span className="text">
+								Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. 
+								Pemesanan hari ini sampai pukul 16.00 WIB
+							</span>
+						</div>
+						<div className="product-title">
+							<span className="name">Gado-Gado</span>
+							<span className="stats">1 Terjual</span>
+						</div>
+					</div>
+
+					<div className="gigs-cards-items">
+						<div className="product-img"></div>
+						<div className="product-desc">
+							<span className="text">
+								Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. 
+								Pemesanan hari ini sampai pukul 16.00 WIB
+							</span>
+						</div>
+						<div className="product-title">
+							<span className="name">Gado-Gado</span>
+							<span className="stats">1 Terjual</span>
+						</div>
+					</div>
 
 					<div className="gigs-cards-items">
 						<div className="product-img"></div>

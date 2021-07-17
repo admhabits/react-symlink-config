@@ -106,7 +106,8 @@ body {
 	height: 100%;
 	overflow: hidden;
 	justify-content: stretch;
-	padding: 0;
+	padding-right: 40px;
+	padding-left: 40px;
 }
 
 .gigs-cards{
@@ -116,8 +117,8 @@ body {
 	display: grid;
 	grid-template-columns: auto auto;
 	grid-template-rows: 1fr 1fr;
-	justify-content: stretch;
-	align-items: start;
+	justify-content: center;
+	align-content: center;
 	column-gap: 0.5em;
 	row-gap: 0.5em;
 }
@@ -146,7 +147,7 @@ body {
 	color: #455;
 	padding: 0.6em;
 	font-size: 1em;
-	font-weight: 450;
+	font-weight: 400;
 	grid-row: 1/2;
 	grid-column: 2/3;
 	box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.1);
@@ -154,6 +155,10 @@ body {
 }
 
 @media only screen and (max-width: 768px){
+
+	.content-page {
+		padding: 0;
+	}
 	.gigs-cards {
 		grid-template-columns: auto auto;
 		grid-template-rows: 1fr 1fr;
@@ -192,6 +197,7 @@ body {
 	align-items: center;
 	color: #455;
 	background: #3771;
+	font-weight: 450;
 	grid-row: 3/4;
 	grid-column: 1/3;
 }
