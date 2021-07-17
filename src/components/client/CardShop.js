@@ -7,7 +7,10 @@ export default function CardShop({sales, name, img, desc, price, stock}) {
 				<div className="product-img-container">
 					<img className="product-image" src={img} alt="product-image"/>
 					<span className="product-price">
-						Rp { price }
+						<span className="prc">Rp { price }</span>
+						<span className="atc material-icons md-24">
+							add_shopping_cart
+						</span>
 					</span>
 				</div>
 
