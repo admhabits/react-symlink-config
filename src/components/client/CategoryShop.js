@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function CategoryShop() {
 	return (
-		<div>
+		<>
 			<div className="cat-item">
 				<div className="cat-img"></div>
 				<div className="cat-holder">Busana</div> 
@@ -19,6 +19,6 @@ export default function CategoryShop() {
 				<div className="cat-img"></div>
 				<div className="cat-holder">Peralatan</div> 
 			</div>
-		</div>
+		</>
 	)
 }
