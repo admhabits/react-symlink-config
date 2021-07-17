@@ -36,7 +36,7 @@ export default function Shop() {
 				</div>*/}
 				<div className="gigs-cards">
 					<CardShop
-						stock={123}
+						stock={423}
 						price={3000} 
 						name={"kopi"} 
 						sales={294} 
@@ -44,7 +44,7 @@ export default function Shop() {
 						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
 						/>
 					<CardShop
-						stock={123}
+						stock={200}
 						price={1500} 
 						name={"Bakwan"} 
 						sales={274} 
@@ -52,7 +52,7 @@ export default function Shop() {
 						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
 						/>
 					<CardShop
-						stock={123}
+						stock={232}
 						price={3500} 
 						name={"Mendoan"} 
 						sales={214} 
@@ -61,7 +61,7 @@ export default function Shop() {
 						/>
 
 					<CardShop
-						stock={123}
+						stock={133}
 						price={5000} 
 						name={"Roti"} 
 						sales={154} 

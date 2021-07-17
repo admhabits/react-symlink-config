@@ -63,11 +63,11 @@ export default class App extends Component {
                           </>
                       )}/>
                 
-                   {/* <Route render={()=>(
+                    <Route render={()=>(
                           <>
                             NOT FOUND 404
                           </>
-                      )}/>*/}
+                      )}/>
 
               </Switch>
 
