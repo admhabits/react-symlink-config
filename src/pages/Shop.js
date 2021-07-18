@@ -37,15 +37,15 @@ export default function Shop() {
 					<CardShop
 						stock={423}
 						price={3000} 
-						name={"kopi"} 
+						name={"Kopi Hitam"} 
 						sales={294} 
 						img={kopi} 
-						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
+						desc={"Bubuk kopi tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
 						/>
 					<CardShop
 						stock={200}
 						price={1500} 
-						name={"Bakwan"} 
+						name={"Bakwan Jagung"} 
 						sales={274} 
 						img={bakwan} 
 						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
@@ -62,7 +62,7 @@ export default function Shop() {
 					<CardShop
 						stock={133}
 						price={5000} 
-						name={"Roti"} 
+						name={"Roti Bakar"} 
 						sales={154} 
 						img={roti} 
 						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}

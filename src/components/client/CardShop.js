@@ -19,14 +19,14 @@ export default function CardShop({sales, name, img, desc, price, stock}) {
 						{ desc }
 					</span>
 					<span className="stock">
-						<span className="items-stats">Stock</span>
+						<span className="items-stats">Persediaan</span>
 						<span className="items-count">{stock}</span>
 					</span>
 				</div>
 
 				<div className="product-title">
 					<span className="name">{name}</span>
-					<span className="stats">{sales} Sales</span>
+					<span className="stats">{sales} Penjualan</span>
 				</div>
 			</div>
 		</>

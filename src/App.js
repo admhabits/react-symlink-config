@@ -7,7 +7,10 @@ import './assets/css/index.css';
 import Shop from './pages/Shop';
 
 export default class App extends Component {
-
+  constructor(props){
+    super(props);
+    
+  }
   componentDidMount() {
     $('.atc').on('click', function(){
       alert("Add To Cart");
@@ -16,6 +19,7 @@ export default class App extends Component {
     $('#cart-shop').on('click', function(){
       alert("Keranjang Belanja");
     })
+
   }
   render() {
     return (
@@ -24,7 +28,8 @@ export default class App extends Component {
             <Switch>
               <Route exact path={"/"} component={()=>(
                   <>
-                    <Shop/>
+                    
+                   <Shop/>
                   </>
                 )}/>
 

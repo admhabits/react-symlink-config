@@ -7,7 +7,7 @@ var config = {
 	apiKey : "AiyZaYuKUklwJKHlkaweuidJKHESJH",
 	databaseURL: "http://localhost:9000?ns=hosting-poject",
 	projectId: "hosting-poject"
-}
+};
 
 firebase.initializeApp(config);
 
