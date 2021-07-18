@@ -272,6 +272,11 @@ span.atc.material-icons {
 }
 
 
+span.stock {
+	border-top: 1px solid #2a8a55;
+}
+
+
 
 /*Break Point*/
 
@@ -315,6 +320,7 @@ span.atc.material-icons {
 
 	span.stock {
 		font-size: 1em;
+		border-top: 1px solid #2a8a55;
 	}
 
 	.product-title {
@@ -360,6 +366,7 @@ span.items-count {
  	justify-content: center;
  	align-items: center;
  	color: #234;
+ 	border-top: 1px solid #2a8a55;
  }
 
  span.text {
@@ -381,5 +388,9 @@ span.items-count {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+
+	span.stock {
+		border-top: 1px solid #2a8a55!important;
 	}
 }
