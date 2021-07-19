@@ -15,7 +15,7 @@ export default class CardShop extends Component{
 		this.img = img;
 		this.name = name;
 		this.sales = sales;
-		this.price = price;
+		this.price = new Number(price).toLocaleString("id-ID");;
 		this.stock = stock;
 		this.desc = desc;
 	}
@@ -23,7 +23,7 @@ export default class CardShop extends Component{
 	 componentDidMount() {
  		const ini = this;
  	    $(`<img class='product-image'/>`).load(this.img, function(){
- 	    	console.log('load')
+ 	    	// console.log('load')
  	    	ini.setState({ 
  	    		loaded: true,  
  	    		src : ini.img
