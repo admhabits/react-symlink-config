@@ -3,25 +3,16 @@ import { useParams, useLocation, useRouteMatch, Link } from 'react-router-dom'
 import CardShop from '../components/client/CardShop';
 import $ from 'jquery';
 
-import kopi from '../assets/images/kopi.jpeg';
-import bakwan from '../assets/images/bakwan.jpeg';
-import mendoan from '../assets/images/mendoan.jpeg';
-import roti from '../assets/images/roti.jpeg';
+import {product} from '../data/product.js';
 
 export default function Shop() {
 	
 	const { search } = useLocation();
 	const query = new URLSearchParams(search).get('query');
 	const [ view, setView] = useState(false);
-	if(view){
-	
-	   	 $('.cart-container').css('display', 'flex')
-	  
-	} else {
+	const [ dataProduct, setProduct ] = useState(product.alamhafidz01);
 
-		$('.cart-container').css('display', 'none')
-	
-	}
+	view ? ($('.cart-container').css('display', 'flex')) : ($('.cart-container').css('display', 'none'));
 	
 	return (
 		<React.StrictMode>
@@ -49,43 +40,22 @@ export default function Shop() {
 				{/*<div className="gigs-category">
 					<CategoryShop/>
 				</div>*/}
-
-				<div className="gigs-cards">
-					
-					<CardShop
-						stock={423}
-						price={3000} 
-						name={"toko arkana"} 
-						sales={294} 
-						img={kopi} 
-						desc={"Bubuk kopi tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
-						/>
-					<CardShop
-						stock={200}
-						price={1500} 
-						name={"toko arkana"} 
-						sales={274} 
-						img={bakwan} 
-						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
-						/>
-					<CardShop
-						stock={232}
-						price={3500} 
-						name={"toko arkana"} 
-						sales={214} 
-						img={mendoan} 
-						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
-						/>
-
-					<CardShop
-						stock={2133}
-						price={5000} 
-						name={"toko arkana"} 
-						sales={154} 
-						img={roti} 
-						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
-						/>
-					
+				<div className="gigs-cards" >
+					{ dataProduct && (
+						Object.keys(dataProduct).map((val, key)=>(
+							
+							<CardShop 
+								key={key}
+								stock={dataProduct[val].stock}
+								price={dataProduct[val].price} 
+								name={dataProduct[val].vendor} 
+								sales={dataProduct[val].sales} 
+								img={dataProduct[val].img} 
+								desc={dataProduct[val].desc}
+							/>
+							
+						))
+					)}
 				</div>
 			</div>
 			<div className="footer-container">
