@@ -17,7 +17,7 @@ export default class CardShop extends Component{
 		this.sales = sales;
 		this.price = new Number(price).toLocaleString("id-ID");;
 		this.stock = stock;
-		this.desc = desc;
+		this.desc = desc.substr(0, 70) + "...";
 	}
 
 	 componentDidMount() {

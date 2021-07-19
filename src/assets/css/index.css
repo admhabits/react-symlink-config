@@ -312,7 +312,7 @@ span.stock {
 
 span.text {
 
-	overflow-y: scroll;
+	overflow-y: hidden;
 	overflow-x: hidden;
 
 
@@ -357,7 +357,7 @@ span.text {
 	span.text {
 		text-align: left;
 		text-shadow: blanchedalmond;
-		overflow-y: scroll;
+		overflow-y: hidden;
 		overflow-x: hidden;
 		height: 100%;
 	}	
