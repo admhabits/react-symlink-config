@@ -9,6 +9,7 @@ import mendoan from '../assets/images/mendoan.jpeg';
 import roti from '../assets/images/roti.jpeg';
 
 export default function Shop() {
+	
 	const { search } = useLocation();
 	const query = new URLSearchParams(search).get('query');
 	const [ view, setView] = useState(false);
