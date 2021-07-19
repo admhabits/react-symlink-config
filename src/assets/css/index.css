@@ -329,6 +329,10 @@ span.text {
 
 @media only screen and (max-width: 768px){
 
+	.header-container {
+		z-index: 6;
+	}
+
 	.content-page {
 		padding: 0;
 	}

@@ -10,19 +10,15 @@ import Shop from './pages/Shop';
 export default class App extends Component {
   constructor(props){
     super(props);
+    // this.state = {
+    //   cart: false
+    // }
     
   }
-  componentDidMount() {
-    $('.atc').on('click', function(){
-      alert("Add To Cart");
-    })
 
-    $('#cart-shop').on('click', function(){
-      alert("Keranjang Belanja");
-    })
 
-  }
   render() {
+
     return (
       <StrictMode>
           <BrowserRouter>

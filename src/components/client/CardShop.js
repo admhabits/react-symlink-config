@@ -29,6 +29,8 @@ export default class CardShop extends Component{
  	    		src : ini.img
  	    	});
  	    })
+
+
 	 }
 
 	render(){

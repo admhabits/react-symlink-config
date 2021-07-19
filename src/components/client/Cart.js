@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import '../../assets/css/cart.css';
 import bakwan from '../../assets/images/bakwan.jpeg';
+import mendoan from '../../assets/images/mendoan.jpeg';
+import roti from '../../assets/images/roti.jpeg';
 
 export default class Cart extends Component {
 	render() {
 		return (
 			<>
-				<div className="cart-container">
+				<div className="cart-container" id="cart_c">
 				<span></span>
 					<div className="cart-box">
 						<div className="cart-wrapper">
@@ -19,7 +21,11 @@ export default class Cart extends Component {
 								alt="item-img"/>
 							</div>
 							<div className="item-name">Bakwan Jagung</div>
-							<div className="item-qty">23</div>
+							<div className="item-qty">
+								<span className="minus">-</span>
+								<span className="counter">21</span>
+								<span className="plus">+</span>
+							</div>
 						</div>
 
 						<div className="cart-wrapper">
@@ -28,11 +34,15 @@ export default class Cart extends Component {
 								
 								className="img-item"
 								id="cart_id" 
-								src={bakwan} 
+								src={mendoan} 
 								alt="item-img"/>
 							</div>
-							<div className="item-name">Bakwan Jagung</div>
-							<div className="item-qty">23</div>
+							<div className="item-name">Mendoan Spicy</div>
+							<div className="item-qty">
+								<span className="minus">-</span>
+								<span className="counter">21</span>
+								<span className="plus">+</span>
+							</div>
 						</div>
 
 						<div className="cart-wrapper">
@@ -41,11 +51,15 @@ export default class Cart extends Component {
 								
 								className="img-item"
 								id="cart_id" 
-								src={bakwan} 
+								src={roti} 
 								alt="item-img"/>
 							</div>
-							<div className="item-name">Bakwan Jagung</div>
-							<div className="item-qty">23</div>
+							<div className="item-name">Roti Bakar</div>
+							<div className="item-qty">
+								<span className="minus">-</span>
+								<span className="counter">21</span>
+								<span className="plus">+</span>
+							</div>
 						</div>
 
 					</div>

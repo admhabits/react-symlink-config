@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, useLocation, useRouteMatch, Link } from 'react-router-dom'
 import CardShop from '../components/client/CardShop';
+import $ from 'jquery';
 
 import kopi from '../assets/images/kopi.jpeg';
 import bakwan from '../assets/images/bakwan.jpeg';
@@ -10,6 +11,17 @@ import roti from '../assets/images/roti.jpeg';
 export default function Shop() {
 	const { search } = useLocation();
 	const query = new URLSearchParams(search).get('query');
+	const [ view, setView] = useState(false);
+	if(view){
+	
+	   	 $('.cart-container').css('display', 'flex')
+	  
+	} else {
+
+		$('.cart-container').css('display', 'none')
+	
+	}
+	
 	return (
 		<React.StrictMode>
 
@@ -20,7 +32,9 @@ export default function Shop() {
 					Warung Kilat</Link>
 				</div>
 				<div className="navbar">
-					<div className="navbar-item" id="cart-shop">
+					<div className="navbar-item"
+						onClick={()=>setView(!view)} 
+						id="cart-shop">
 						<span className="material-icons md-light md-26">shopping_cart</span>
 						<span className="cart-counts">0</span>
 					</div>
