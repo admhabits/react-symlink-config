@@ -179,7 +179,7 @@ span.material-icons {
 	grid-template-columns: auto auto;
 	grid-template-rows: auto auto auto;
 	border: 0px solid #2a8a55;
-	
+
 
 }
 
@@ -311,14 +311,13 @@ span.stock {
 }
 
 span.text {
-	display: block;
+
 	overflow-y: scroll;
 	overflow-x: hidden;
+
+
 	height: 100%;
 	max-width: 250px;
-	line-clamp: 3;
-	white-space: nowrap;
-	text-overflow: ellipsis;
 }
 
 
@@ -428,6 +427,7 @@ span.items-count {
 		text-align: left;
 		text-shadow: blanchedalmond;
 		font-size: 0.9em;
+
 	}
 
 
