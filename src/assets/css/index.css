@@ -34,6 +34,12 @@ span.material-icons {
 	padding-left: 14px;
 }
 
+.cart-counts {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .brand > a{
 	color: floralwhite;
 	white-space: nowrap;

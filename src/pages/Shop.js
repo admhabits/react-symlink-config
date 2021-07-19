@@ -35,7 +35,7 @@ export default function Shop() {
 					<div className="navbar-item"
 						onClick={()=>setView(!view)} 
 						id="cart-shop">
-						<span className="material-icons md-light md-26">shopping_cart</span>
+						<span className="material-icons md-light md-26">shopping_bag</span>
 						<span className="cart-counts">0</span>
 					</div>
 				</div>
