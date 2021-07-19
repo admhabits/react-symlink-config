@@ -21,7 +21,7 @@ body {
 	position: sticky;
 	justify-content: space-between;
 	align-items: center;
-	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+	box-shadow: 0 0.5rem 1rem rgb(60 179 113 / 15%) !important;
 
 }
 
@@ -121,14 +121,15 @@ span.material-icons {
 	height: 100%;
 	overflow: hidden;
 	justify-content: stretch;
-	padding-right: 40px;
-	padding-left: 40px;
+	padding-right: 2em;
+	padding-left: 2em;
+	background: floralwhite;
 }
 
 .gigs-cards{
 	
 	padding: 0.8em;
-	background: White;
+	background: white;
 	display: grid;
 	grid-template-columns: 250px 250px 250px;
 	grid-template-rows: auto;
@@ -137,6 +138,7 @@ span.material-icons {
 	font-size: 0.8em;
 	column-gap: 0.8em;
 	row-gap: 0.8em;
+	
 }
 
 @media only screen and (min-width: 1080px){
@@ -145,7 +147,6 @@ span.material-icons {
 		padding: 0.8em;
 		background: White;
 		display: grid;
-		height: 100vh;
 		grid-template-columns: 250px 250px 250px 250px;
 		grid-template-rows: auto;
 		justify-content: center;
@@ -159,7 +160,7 @@ span.material-icons {
 		background: mediumseagreen;
 		font-weight: 400px;
 		padding: 10px;
-		position: fixed;
+		position: sticky;
 		bottom: 0;
 		margin-top: 0;
 		display: flex;
@@ -173,13 +174,15 @@ span.material-icons {
 	background: white;
 	height: 100%;
 	max-width: 100%;
-	box-shadow: 3px 3px 3px rgb(0 0 0 / 15%);
+	box-shadow: 3px 3px 10px rgb(0 0 0 / 15%);
 	display: grid;
 	grid-template-columns: auto auto;
 	grid-template-rows: auto auto auto;
-	border: 1px solid #2a8a55;
+	border: 0px solid #2a8a55;
+	
 
 }
+
 
 .product-img-container {
 	display: flex;
@@ -239,7 +242,7 @@ span.atc.material-icons {
 
 .product-desc {
 	height: 100px;
-
+	cursor: pointer;
 	text-align: left;
 	display: flex;
 	flex-direction: column;
@@ -304,13 +307,18 @@ span.atc.material-icons {
 
 
 span.stock {
-	border-top: 1px solid #2a8a55;
+	border-top: 0px solid #2a8a55;
 }
 
 span.text {
+	display: block;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	height: 100%;
+	max-width: 250px;
+	line-clamp: 3;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 
@@ -332,7 +340,7 @@ span.text {
 		width: 100%;
 		font-family: monospace;
 		font-weight: 150;
-		border: 1px solid #2a8a55;
+		border: 0px solid #2a8a55;
 	}
 
 	.product-image {
