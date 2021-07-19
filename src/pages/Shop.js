@@ -60,25 +60,9 @@ export default function Shop() {
 						/>
 
 					<CardShop
-						stock={133}
+						stock={2133}
 						price={5000} 
 						name={"rengganis43"} 
-						sales={154} 
-						img={roti} 
-						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
-						/>
-					<CardShop
-						stock={133}
-						price={5000} 
-						name={"abubakar78"} 
-						sales={154} 
-						img={roti} 
-						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
-						/>
-					<CardShop
-						stock={133}
-						price={5000} 
-						name={"abdullah67"} 
 						sales={154} 
 						img={roti} 
 						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}

@@ -241,7 +241,8 @@ span.atc.material-icons {
 }
 
 .product-desc {
-	height: 100px;
+	/*height: 100px;*/
+	height: 100%;
 	cursor: pointer;
 	text-align: left;
 	display: flex;
