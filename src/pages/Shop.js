@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, useLocation, useRouteMatch, Link } from 'react-router-dom'
 import CardShop from '../components/client/CardShop';
-import CategoryShop from '../components/client/CategoryShop';
 
 import kopi from '../assets/images/kopi.jpeg';
 import bakwan from '../assets/images/bakwan.jpeg';
@@ -13,6 +12,7 @@ export default function Shop() {
 	const query = new URLSearchParams(search).get('query');
 	return (
 		<React.StrictMode>
+
 			<div className="header-container">
 				<div className="brand">
 					<Link to="/">
@@ -26,6 +26,7 @@ export default function Shop() {
 					</div>
 				</div>
 			</div>
+			
 			<div className="content-page">
 				<div className="banner-sliders">
 					
@@ -33,11 +34,13 @@ export default function Shop() {
 				{/*<div className="gigs-category">
 					<CategoryShop/>
 				</div>*/}
+
 				<div className="gigs-cards">
+					
 					<CardShop
 						stock={423}
 						price={3000} 
-						name={"alamhafidz61"} 
+						name={"toko arkana"} 
 						sales={294} 
 						img={kopi} 
 						desc={"Bubuk kopi tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
@@ -45,7 +48,7 @@ export default function Shop() {
 					<CardShop
 						stock={200}
 						price={1500} 
-						name={"wibowo97"} 
+						name={"toko arkana"} 
 						sales={274} 
 						img={bakwan} 
 						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
@@ -53,7 +56,7 @@ export default function Shop() {
 					<CardShop
 						stock={232}
 						price={3500} 
-						name={"kurniawan90"} 
+						name={"toko arkana"} 
 						sales={214} 
 						img={mendoan} 
 						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
@@ -62,7 +65,7 @@ export default function Shop() {
 					<CardShop
 						stock={2133}
 						price={5000} 
-						name={"rengganis43"} 
+						name={"toko arkana"} 
 						sales={154} 
 						img={roti} 
 						desc={"Sebuah makanan yang dibuat menggunakan tepung tradisional pilihan terbaik. Pemesanan hari ini sampai pukul 16.00 WIB"}
@@ -73,6 +76,7 @@ export default function Shop() {
 			<div className="footer-container">
 				<div className="copyright">&copy; Warung Kilat Karangpucung</div>
 			</div>
+			
 		</React.StrictMode>
 	)
 }

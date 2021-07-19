@@ -15,7 +15,7 @@ body {
 	text-transform: uppercase;
 	height: 50px;
 	top: 0;
-	z-index: 1;
+	z-index: 6;
 	display: flex;
 	position: -webkit-sticky;
 	position: sticky;
@@ -103,9 +103,11 @@ span.material-icons {
 	bottom: 0;
 	margin-top: 0;
 	display: flex;
+
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	z-index: 3;
 }
 
 .copyright {

@@ -1,6 +1,7 @@
 import React, { Component, StrictMode } from 'react';
 import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import $ from 'jquery';
+import Cart from './components/client/Cart';
 
 import './assets/css/icons.css';
 import './assets/css/index.css';
@@ -89,7 +90,7 @@ export default class App extends Component {
 
               <Route path={"/*"} render={()=>(<>Not Found</>)}/>
             </Switch>
-
+            <Cart/>
           </BrowserRouter>
       </StrictMode>
     );
