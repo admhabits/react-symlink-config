@@ -3,6 +3,7 @@ import '../../assets/css/cart.css';
 import bakwan from '../../assets/images/bakwan.jpeg';
 import mendoan from '../../assets/images/mendoan.jpeg';
 import roti from '../../assets/images/roti.jpeg';
+import kopi from '../../assets/images/kopi.jpeg';
 
 export default class Cart extends Component {
 	render() {
@@ -25,6 +26,7 @@ export default class Cart extends Component {
 								<span className="minus">-</span>
 								<span className="counter">21</span>
 								<span className="plus">+</span>
+								<span className="subprice">Rp 20.000</span>
 							</div>
 						</div>
 
@@ -42,6 +44,8 @@ export default class Cart extends Component {
 								<span className="minus">-</span>
 								<span className="counter">21</span>
 								<span className="plus">+</span>
+								<span className="subprice">Rp 20.000</span>
+
 							</div>
 						</div>
 
@@ -59,6 +63,27 @@ export default class Cart extends Component {
 								<span className="minus">-</span>
 								<span className="counter">21</span>
 								<span className="plus">+</span>
+								<span className="subprice">Rp 20.000</span>
+
+							</div>
+						</div>
+
+						<div className="cart-wrapper">
+							<div className="cart-img">
+								<img 
+								
+								className="img-item"
+								id="cart_id" 
+								src={kopi} 
+								alt="item-img"/>
+							</div>
+							<div className="item-name">Kopi Hitam</div>
+							<div className="item-qty">
+								<span className="minus">-</span>
+								<span className="counter">21</span>
+								<span className="plus">+</span>
+								<span className="subprice">Rp 20.000</span>
+								
 							</div>
 						</div>
 
