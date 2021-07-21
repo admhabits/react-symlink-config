@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import CircularSpinner from './Circular';
 import $ from 'jquery';
-import { AddItem, UpdateItem, RemoveItem, ClearCart } from '../../store/actions/cart-actions';
-
 
  class CardShop extends Component{
 	
-
-	constructor({sales, name, img, desc, price, stock,id, vendor, index}){
+	constructor({sales, name, img, desc, price, stock,id, vendor}){
 		super();
 
 		this.state = {
@@ -15,7 +12,6 @@ import { AddItem, UpdateItem, RemoveItem, ClearCart } from '../../store/actions/
 			loaded: false 
 		};
 		this.id = id;
-		this.index = index;
 		this.img = img;
 		this.name = name;
 		this.vendor = vendor;
@@ -46,7 +42,7 @@ import { AddItem, UpdateItem, RemoveItem, ClearCart } from '../../store/actions/
 	 }
 
 	 addCartHandle = ()=>{
-	 	const { id, img, name, price, index } = this;
+	 	const { id, img, name, price } = this;
 
 	 	const data = {
 	 			id: id,
@@ -55,8 +51,6 @@ import { AddItem, UpdateItem, RemoveItem, ClearCart } from '../../store/actions/
 	 			price: price,
 	 			count: 1
 	 	}
-
-	 	this.props.AddItem(index,data)
 	 }
 
 	render(){

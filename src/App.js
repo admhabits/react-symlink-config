@@ -2,10 +2,7 @@ import React, { Component, StrictMode } from 'react';
 import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import $ from 'jquery';
 import PropTypes from 'prop-types';
-
-
 import Cart from './components/client/Cart';
-import {connect } from 'react-redux';
 
 import './assets/css/icons.css';
 import './assets/css/index.css';

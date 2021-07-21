@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../../assets/css/cart.css';
 import { dataCart } from '../../data/cart.js';
-import { connect } from 'react-redux';
 
  class Cart extends Component {
 	constructor(props){
@@ -21,7 +20,7 @@ import { connect } from 'react-redux';
 
 	render() {
 		const { cart } = this.state;
-		console.log(cart)
+		
 		return (
 			<>
 				<div className="cart-container" id="cart_c">
@@ -42,9 +41,9 @@ import { connect } from 'react-redux';
 										</div>
 										<div className="item-name">{cart[val].name}</div>
 										<div className="item-qty">
-											<span className="minus" onClick={this.counterMinus}>-</span>
+											<span className="minus" >-</span>
 											<span className="counter">{cart[val].count}</span>
-											<span className="plus" onClick={this.counterPlus}>+</span>
+											<span className="plus">+</span>
 											<span className="subprice">Rp {new Number(cart[val].price).toLocaleString("id-ID")}</span>
 										</div>
 									</div>
