@@ -4,17 +4,17 @@ import CardShop from '../components/client/CardShop';
 import $ from 'jquery';
 
 import {product} from '../data/product.js';
-import {dataCart} from '../data/cart.js';
 
-export default function Shop() {
+export default function Shop(props) {
 	
 	const { search } = useLocation();
 	const query = new URLSearchParams(search).get('query');
 	const [ view, setView] = useState(false);
 	const [ dataProduct, setProduct ] = useState(product.alamhafidz01);
-	console.log(dataCart.cart);
 
-	view ? ($('.cart-container').css('display', 'flex')) : ($('.cart-container').css('display', 'none'));
+	view ? 
+	($('.cart-container').css('display', 'flex')) : 
+	($('.cart-container').css('display', 'none'));
 	
 	return (
 		<React.StrictMode>
@@ -29,7 +29,7 @@ export default function Shop() {
 					<div className="navbar-item"
 						onClick={()=>setView(!view)} 
 						id="cart-shop">
-						<span className="material-icons md-light md-26">shopping_bag</span>
+						<span className="material-icons md-light md-26">shopping_cart</span>
 						<span className="cart-counts">0</span>
 					</div>
 				</div>
@@ -48,12 +48,16 @@ export default function Shop() {
 							
 							<CardShop 
 								key={key}
+								index={key}
+								id={val}
 								stock={dataProduct[val].stock}
 								price={dataProduct[val].price} 
-								name={dataProduct[val].vendor} 
+								name={dataProduct[val].name}
+								vendor={dataProduct[val].vendor} 
 								sales={dataProduct[val].sales} 
 								img={dataProduct[val].img} 
 								desc={dataProduct[val].desc}
+								{...props}
 							/>
 							
 						))

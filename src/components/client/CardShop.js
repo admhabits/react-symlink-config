@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
 import CircularSpinner from './Circular';
 import $ from 'jquery';
+import { AddItem, UpdateItem, RemoveItem, ClearCart } from '../../store/actions/cart-actions';
 
-export default class CardShop extends Component{
+
+ class CardShop extends Component{
 	
 
-	constructor({sales, name, img, desc, price, stock}){
+	constructor({sales, name, img, desc, price, stock,id, vendor, index}){
 		super();
 
 		this.state = {
 			src : img, 
 			loaded: false 
 		};
+		this.id = id;
+		this.index = index;
 		this.img = img;
 		this.name = name;
+		this.vendor = vendor;
 		this.sales = sales;
-		this.price = new Number(price).toLocaleString("id-ID");;
+		this.price = price;;
 		this.stock = stock;
 		this.desc = desc.substr(0, 70) + "...";
 	}
@@ -33,9 +38,30 @@ export default class CardShop extends Component{
 
 	 }
 
+	 componentWillUnMount(){
+	 	this.setState({
+	 		loaded:false,
+	 		src: this.img
+	 	})
+	 }
+
+	 addCartHandle = ()=>{
+	 	const { id, img, name, price, index } = this;
+
+	 	const data = {
+	 			id: id,
+	 			img: img,
+	 			name: name,
+	 			price: price,
+	 			count: 1
+	 	}
+
+	 	this.props.AddItem(index,data)
+	 }
+
 	render(){
 		const { loaded, src } = this.state;
-		// console.log(loaded)
+		// console.log(this.props.AddItem)
 		return (
 			<>
 				<div className="gigs-cards-items">
@@ -52,8 +78,10 @@ export default class CardShop extends Component{
 						    </div>
 						  )}
 						<span className="product-price">
-							<span className="prc">Rp { this.price }</span>
-							<span className="atc material-icons md-24">
+							<span className="prc">Rp { new Number(this.price).toLocaleString("id-ID") }</span>
+							<span
+								onClick={this.addCartHandle} 
+								className="atc material-icons md-24">
 								add_shopping_cart
 							</span>
 						</span>
@@ -70,7 +98,7 @@ export default class CardShop extends Component{
 					</div>
 
 					<div className="product-title">
-						<span className="name">{this.name}</span>
+						<span className="name">{this.vendor}</span>
 						<span className="stats">{this.sales} Sales</span>
 					</div>
 				</div>
@@ -79,3 +107,5 @@ export default class CardShop extends Component{
 	}
 
 }
+
+export default CardShop;

@@ -1,19 +1,24 @@
 import React, { Component, StrictMode } from 'react';
 import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import $ from 'jquery';
+import PropTypes from 'prop-types';
+import { AddItem, UpdateItem, RemoveItem, ClearCart } from './store/actions/cart-actions';
+
+
 import Cart from './components/client/Cart';
+import {connect } from 'react-redux';
 
 import './assets/css/icons.css';
 import './assets/css/index.css';
 import Shop from './pages/Shop';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props){
     super(props);
     // this.state = {
     //   cart: false
     // }
-    
+    // console.log(props)
   }
 
 
@@ -26,7 +31,7 @@ export default class App extends Component {
               <Route exact path={"/"} component={()=>(
                   <>
                     
-                   <Shop/>
+                   <Shop {...this.props}/>
                   </>
                 )}/>
 
@@ -86,9 +91,16 @@ export default class App extends Component {
 
               <Route path={"/*"} render={()=>(<>Not Found</>)}/>
             </Switch>
-            <Cart/>
+            <Cart {...this.props}/>
           </BrowserRouter>
       </StrictMode>
     );
   }
 }
+
+
+const MapStateToProps = (state)=>({
+  cart: state.CartReducers
+})
+
+export default connect(MapStateToProps, { AddItem, UpdateItem, RemoveItem, ClearCart})(App);
