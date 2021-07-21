@@ -1,92 +1,53 @@
 import React, { Component } from 'react';
 import '../../assets/css/cart.css';
-import bakwan from '../../assets/images/bakwan.jpeg';
-import mendoan from '../../assets/images/mendoan.jpeg';
-import roti from '../../assets/images/roti.jpeg';
-import kopi from '../../assets/images/kopi.jpeg';
+import { dataCart } from '../../data/cart.js';
 
 export default class Cart extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			cart: null
+		};
+	}
+
+	componentDidMount() {
+	
+		this.setState({
+			cart: dataCart.cart
+		})
+	}
+
 	render() {
+		const { cart } = this.state;
 		return (
 			<>
 				<div className="cart-container" id="cart_c">
 				<span></span>
 					<div className="cart-box">
-						<div className="cart-wrapper">
-							<div className="cart-img">
-								<img 
-								
-								className="img-item"
-								id="cart_id" 
-								src={bakwan} 
-								alt="item-img"/>
-							</div>
-							<div className="item-name">Bakwan Jagung</div>
-							<div className="item-qty">
-								<span className="minus">-</span>
-								<span className="counter">21</span>
-								<span className="plus">+</span>
-								<span className="subprice">Rp 20.000</span>
-							</div>
-						</div>
+						{
+							cart !== null && (
 
-						<div className="cart-wrapper">
-							<div className="cart-img">
-								<img 
-								
-								className="img-item"
-								id="cart_id" 
-								src={mendoan} 
-								alt="item-img"/>
-							</div>
-							<div className="item-name">Mendoan Spicy</div>
-							<div className="item-qty">
-								<span className="minus">-</span>
-								<span className="counter">21</span>
-								<span className="plus">+</span>
-								<span className="subprice">Rp 20.000</span>
-
-							</div>
-						</div>
-
-						<div className="cart-wrapper">
-							<div className="cart-img">
-								<img 
-								
-								className="img-item"
-								id="cart_id" 
-								src={roti} 
-								alt="item-img"/>
-							</div>
-							<div className="item-name">Roti Bakar</div>
-							<div className="item-qty">
-								<span className="minus">-</span>
-								<span className="counter">21</span>
-								<span className="plus">+</span>
-								<span className="subprice">Rp 20.000</span>
-
-							</div>
-						</div>
-
-						<div className="cart-wrapper">
-							<div className="cart-img">
-								<img 
-								
-								className="img-item"
-								id="cart_id" 
-								src={kopi} 
-								alt="item-img"/>
-							</div>
-							<div className="item-name">Kopi Hitam</div>
-							<div className="item-qty">
-								<span className="minus">-</span>
-								<span className="counter">21</span>
-								<span className="plus">+</span>
-								<span className="subprice">Rp 20.000</span>
-								
-							</div>
-						</div>
-
+								Object.keys(cart).map((val, key)=>(
+									<div className="cart-wrapper">
+										<div className="cart-img">
+											<img 
+											
+											className="img-item"
+											id="cart_id" 
+											src={cart[val].img} 
+											alt="item-img"/>
+										</div>
+										<div className="item-name">{cart[val].name}</div>
+										<div className="item-qty">
+											<span className="minus" onClick={this.counterMinus}>-</span>
+											<span className="counter">{cart[val].qty}</span>
+											<span className="plus" onClick={this.counterPlus}>+</span>
+											<span className="subprice">Rp {new Number(cart[val].price).toLocaleString("id-ID")}</span>
+										</div>
+									</div>
+								))
+							)
+						}
 					</div>
 				</div>
 			</>

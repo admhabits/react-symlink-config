@@ -1,4 +1,3 @@
-//Source for the spinner taken from https://codepen.io/jczimm/pen/vEBpoL
 import React, { Component } from "react";
 
 //Loading CSS

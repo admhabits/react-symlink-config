@@ -2,7 +2,7 @@
 
 # konfigurasi
 /node_modules
-#/package.json
+/package.json
 /yarn.lock
 
 
