@@ -2,7 +2,6 @@ import React, { Component, StrictMode } from 'react';
 import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import $ from 'jquery';
 import PropTypes from 'prop-types';
-import { AddItem, UpdateItem, RemoveItem, ClearCart } from './store/actions/cart-actions';
 
 
 import Cart from './components/client/Cart';
@@ -103,4 +102,4 @@ const MapStateToProps = (state)=>({
   cart: state.CartReducers
 })
 
-export default connect(MapStateToProps, { AddItem, UpdateItem, RemoveItem, ClearCart})(App);
+export default connect(MapStateToProps, {})(App);
