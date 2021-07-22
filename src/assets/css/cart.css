@@ -38,29 +38,32 @@
 }
 
 .remove-item {
-	padding: 5px;
+	padding: 3px;
 	width: 25px;
 	height: 25px;
-	position: absolute;
+	position: initial;
 	color: white;
-	background: maroon;
-	border-radius: 100px;
+	background: coral;
+	border-radius: 100%;
 	/*grid-column: 4/5;*/
+	border: 2px solid lightsalmon;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-transform: uppercase;
 	box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
 	cursor: pointer;
+	z-index: 10;
+	margin-top: -6.5em;
 
 }
 
 .remove-item:hover {
-	background: coral;
+	background: maroon;
 }
 
 .remove-item:active {
-	background: coral;
+	background: maroon;
 }
 
 .cart-footer {
@@ -161,6 +164,8 @@ span.minus {
 	padding: 0.2em;
 }
 
+
+
 span.counter {
 	grid-column: 2/3;
 	border:  2px solid green;
@@ -182,12 +187,22 @@ span.plus {
 }
 
 span.plus:active {
+	background: coral;
+	color: white;
+}
+
+span.plus:hover {
+	background: maroon;
+	color: white;
+}
+
+span.minus:hover {
 	background: maroon;
 	color: white;
 }
 
 span.minus:active {
-	background: maroon;
+	background: coral;
 	color: white;
 }
 
