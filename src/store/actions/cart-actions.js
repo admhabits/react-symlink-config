@@ -1,10 +1,14 @@
-import {ADD_TO_CART, REMOVE_CART, ADD_QUANTITY, SUB_QUANTITY} from './action-types';
+import {ADD_TO_CART, REMOVE_CART, ADD_QUANTITY, SUB_QUANTITY} from '../actions/action-types';
 
-export function AddToCart(id){
+export function AddToCart(data, id){
 	const action = {
 		type: ADD_TO_CART,
-		id
+		payload: {
+			id: id,
+			data: data
+		}
 	}
+	return action
 }
 
 export function RemoveCart(id){
@@ -12,6 +16,8 @@ export function RemoveCart(id){
 		type: REMOVE_CART,
 		id
 	}
+
+	return action
 }
 
 export function AddQuantity(id){
@@ -19,6 +25,7 @@ export function AddQuantity(id){
 		type: ADD_QUANTITY,
 		id
 	}
+	return action
 }
 
 export function SubQuantity(id){
@@ -26,4 +33,5 @@ export function SubQuantity(id){
 		type: SUB_QUANTITY,
 		id
 	}
+	return action
 }

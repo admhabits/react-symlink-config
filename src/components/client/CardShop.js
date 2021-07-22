@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import CircularSpinner from './Circular';
 import $ from 'jquery';
+import { connect } from 'react-redux';
+import { AddToCart } from '../../store/actions/cart-actions.js';
 
  class CardShop extends Component{
 	
@@ -31,7 +33,7 @@ import $ from 'jquery';
  	    	});
  	    })
 
-
+ 	    // console.log(this.props)
 	 }
 
 	 componentWillUnMount(){
@@ -39,6 +41,8 @@ import $ from 'jquery';
 	 		loaded:false,
 	 		src: this.img
 	 	})
+
+
 	 }
 
 	 addCartHandle = ()=>{
@@ -49,8 +53,10 @@ import $ from 'jquery';
 	 			img: img,
 	 			name: name,
 	 			price: price,
-	 			count: 1
+	 			quantity: 1
 	 	}
+
+	 	this.props.AddToCart(data, id);
 	 }
 
 	render(){
@@ -102,4 +108,9 @@ import $ from 'jquery';
 
 }
 
-export default CardShop;
+const mapStateToProps = (state) => ({
+	cart: state
+})
+
+
+export default connect(mapStateToProps, { AddToCart })(CardShop);

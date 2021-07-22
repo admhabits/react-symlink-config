@@ -95,8 +95,5 @@ class App extends Component {
 }
 
 
-const MapStateToProps = (state)=>({
-  cart: state.CartReducers
-})
 
-export default connect(MapStateToProps, {})(App);
+export default App;

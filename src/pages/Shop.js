@@ -48,7 +48,6 @@ export default function Shop(props) {
 							
 							<CardShop 
 								key={key}
-								index={key}
 								id={val}
 								stock={dataProduct[val].stock}
 								price={dataProduct[val].price} 
