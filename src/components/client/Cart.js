@@ -36,6 +36,7 @@ import { AddQuantity, SubQuantity } from '../../store/actions/cart-actions'
 				<div className="cart-container" id="cart_c">
 				<span></span>
 					<div className="cart-box">
+						
 						{
 							cart !== null && cart.length !== 0 ? (
 
@@ -69,6 +70,7 @@ import { AddQuantity, SubQuantity } from '../../store/actions/cart-actions'
 
 								)
 						}
+
 						<div className="cart-footer">
 							Total Bayar <span> Rp { new Number(this.props.total).toLocaleString("id-ID")} </span>
 						</div>
