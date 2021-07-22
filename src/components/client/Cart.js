@@ -65,7 +65,7 @@ import { AddQuantity, SubQuantity } from '../../store/actions/cart-actions'
 								)) 
 							) : (
 
-									<div className="cart-empty">Belum ada pesanan</div>
+									<div className="cart-empty">Tidak ada pesanan</div>
 
 								)
 						}
