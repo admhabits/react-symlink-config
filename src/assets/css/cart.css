@@ -37,6 +37,32 @@
 	padding: 0.8em 1em;
 }
 
+.remove-item {
+	padding: 5px;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	color: white;
+	background: maroon;
+	border-radius: 100px;
+	/*grid-column: 4/5;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+
+}
+
+.remove-item:hover {
+	background: coral;
+}
+
+.remove-item:active {
+	background: coral;
+}
+
 .cart-footer {
 	padding: 1em 1em;
 	box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.15);
@@ -66,7 +92,6 @@
 }
 
 .cart-wrapper:hover{
-	cursor: pointer;
 	background: white;
 	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.18);
 	background: mistyrose;

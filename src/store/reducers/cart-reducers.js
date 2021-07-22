@@ -1,4 +1,4 @@
-import {ADD_TO_CART, REMOVE_CART, ADD_QUANTITY, SUB_QUANTITY} from '../actions/action-types';
+import {ADD_TO_CART, REMOVE_ITEM, ADD_QUANTITY, SUB_QUANTITY} from '../actions/action-types';
 
 const initState = {
 	cart: [],
@@ -35,7 +35,7 @@ export default function CartReducers(state = initState, action){
 	            
 	        }
 	    }
-	    if(action.type === REMOVE_CART){
+	    if(action.type === REMOVE_ITEM){
 	        let getItem = state.cart.find(item=> action.id === item.id)
 	        let new_items = state.cart.filter(item=> action.id !== item.id)
 	        

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../assets/css/cart.css';
 // import { dataCart } from '../../data/cart.js';
 import { connect } from 'react-redux';
-import { AddQuantity, SubQuantity } from '../../store/actions/cart-actions'
+import { AddQuantity, SubQuantity, RemoveItem } from '../../store/actions/cart-actions'
 
  class Cart extends Component {
 	constructor(props){
@@ -28,6 +28,10 @@ import { AddQuantity, SubQuantity } from '../../store/actions/cart-actions'
 		this.props.SubQuantity(id)
 	}
 
+	handleRemoveItem = (id) => {
+		this.props.RemoveItem(id)
+	}
+
 	render() {
 		const { cart } = this.state;
 
@@ -42,6 +46,7 @@ import { AddQuantity, SubQuantity } from '../../store/actions/cart-actions'
 
 								Object.keys(cart).map((val, key)=>(
 									<div className="cart-wrapper" key={key}>
+
 										<div className="cart-img">
 											<img 
 											
@@ -62,6 +67,8 @@ import { AddQuantity, SubQuantity } from '../../store/actions/cart-actions'
 												onClick={()=>this.handleAddQuantity(cart[val].id)}>+</span>
 											<span className="subprice">Rp {new Number(cart[val].subTotal).toLocaleString("id-ID")}</span>
 										</div>
+										<div onClick={()=>this.handleRemoveItem(cart[val].id)}
+											className="remove-item">X</div>
 									</div>
 								)) 
 							) : (
@@ -87,4 +94,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, { AddQuantity, SubQuantity })(Cart);
+export default connect(mapStateToProps, { AddQuantity, SubQuantity, RemoveItem })(Cart);

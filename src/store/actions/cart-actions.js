@@ -1,4 +1,4 @@
-import {ADD_TO_CART, REMOVE_CART, ADD_QUANTITY, SUB_QUANTITY} from '../actions/action-types';
+import {ADD_TO_CART, REMOVE_ITEM, ADD_QUANTITY, SUB_QUANTITY} from '../actions/action-types';
 
 export function AddToCart(data, id){
 	const action = {
@@ -11,9 +11,9 @@ export function AddToCart(data, id){
 	return action
 }
 
-export function RemoveCart(id){
+export function RemoveItem(id){
 	const action = {
-		type: REMOVE_CART,
+		type: REMOVE_ITEM,
 		id
 	}
 
