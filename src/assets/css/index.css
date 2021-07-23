@@ -4,6 +4,11 @@
 	font-family: tahoma;
 }
 
+:root {
+	--teal : #009677;
+	--dark-teal:  #048066;
+}
+
 body {
 	background: #FFF;
 	overflow-y: scroll;
@@ -11,7 +16,7 @@ body {
 }
 
 .header-container {
-	background: mediumseagreen;
+	background: var(--teal);
 	text-transform: uppercase;
 	height: 50px;
 	top: 0;
@@ -21,7 +26,7 @@ body {
 	position: sticky;
 	justify-content: space-between;
 	align-items: center;
-	box-shadow: 0 0.5rem 1rem rgb(60 179 113 / 15%) !important;
+	/*box-shadow: 0 0.5rem 1rem rgb(60 179 113 / 15%) !important;*/
 
 }
 
@@ -65,7 +70,7 @@ span.material-icons {
 
 @media (max-width: 480px){
 .header-container {
-	background: seagreen;
+	background: var(--teal);
 	height: 50px;
 	display: flex;
 	position: sticky;
@@ -102,7 +107,7 @@ span.material-icons {
 
 
 .footer-container {
-	background: mediumseagreen;
+	background: var(--teal);
 	font-weight: 400px;
 	padding: 10px;
 	position: sticky;
@@ -218,8 +223,8 @@ span.product-price {
 	grid-row: 1/3;
 	grid-column: 1/3;
 	color: white;
-	font-weight: 600;
-	background: #137d42;
+	font-weight: 500;
+	background: var(--dark-teal);
 
 	opacity: 0.9;
 /*	border-bottom-left-radius: 10px;
@@ -244,8 +249,11 @@ span.atc.material-icons {
 	justify-content: center;
 	align-items: center;
 	margin-right: 0;
-	background: #2e8b57;
+	background: #009688;
 	padding: 0.2em;
+}
+span.atc.material-icons:hover {
+	background: #009898;
 }
 
 .product-desc {
@@ -277,7 +285,7 @@ span.atc.material-icons {
 	justify-content: space-between;
 	align-items: center;
 	color: #fff;
-	background: seagreen;
+	background: var(--teal);
 	font-weight: 450;
 	grid-row: 3/4;
 	grid-column: 1/3;

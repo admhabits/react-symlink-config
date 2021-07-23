@@ -81,6 +81,9 @@ import { AddQuantity, SubQuantity, RemoveItem } from '../../store/actions/cart-a
 						<div className="cart-footer">
 							Total Bayar <span> Rp { new Number(this.props.total).toLocaleString("id-ID")} </span>
 						</div>
+						<div className="btn-checkout">
+							Lanjutkan Pemesanan
+						</div>
 					</div>
 				</div>
 			</>
